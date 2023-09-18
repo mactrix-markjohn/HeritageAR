@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/IntroTest.unity
+    guid: 8b091dc6ec68e431095874af4fc7d78a
+  - enabled: 1
     path: Assets/Scenes/HeritageAR.unity
     guid: f8574750e4907443793304f5628221a1
+  - enabled: 1
+    path: Assets/Scenes/GeoAPIStarterKit/0-TrackingStateMonitoring.unity
+    guid: dd004a99b23c14fbbb589c0e097a89b8
+  - enabled: 1
+    path: Assets/Scenes/GeoAPIStarterKit/1-PlacingObjectAt_LatLngAlt.unity
+    guid: 0c179759c7d8e4e44afbbfd84ef7da8a
+  - enabled: 1
+    path: Assets/Scenes/GeoAPIStarterKit/2-TapToPlace.unity
+    guid: 68cfdd86d1913475c8ebe45a0e04188c
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a8307bc4d15c342248e9d0dabfb78d1a, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: e648e8fd6d19443feab0ff7aad57893f, type: 2}
