@@ -4,6 +4,7 @@ using AR_Fukuoka;
 using Google.XR.ARCoreExtensions;
 using Google.XR.ARCoreExtensions.Samples.Geospatial;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -41,11 +42,18 @@ public class ARVPSController : MonoBehaviour
     bool initialized = false;
 
 
+    private HeritagePoint heritagePoint;
+
+
     public GameObject[] vpsVirtualContent;
 
     private void Start()
     {
         //string sceneClicked = PlayerPrefs.GetString('','' );
+
+        heritagePoint = MainPageController.selectedLocation;
+        Latitude = heritagePoint.latitude;
+        Longitude = heritagePoint.longitude;
     }
 
 
@@ -102,6 +110,8 @@ public class ARVPSController : MonoBehaviour
                 if (anchor != null)
                 {
                     displayObject = Instantiate(ContentPrefab, anchor.transform);
+                    displayObject.GetComponent<HeritageMarker>().Setup(heritagePoint, this);
+                    
                 }
             }
         }
@@ -120,6 +130,8 @@ public class ARVPSController : MonoBehaviour
             {
                 displayObject  = Instantiate(ContentPrefab,result.Anchor.gameObject.transform);
                 displayObject .transform.parent = result.Anchor.gameObject.transform;
+                displayObject.GetComponent<HeritageMarker>().Setup(heritagePoint, this);
+
             }
             yield break;
         }
@@ -145,5 +157,10 @@ public class ARVPSController : MonoBehaviour
                pose.OrientationYawAccuracy.ToString("F1"),   //{6}
                status //{7}
            );
+        }
+
+        public void BackButton()
+        {
+            SceneManager.LoadScene("MainPage");
         }
 }

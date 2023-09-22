@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.SceneManagement;
 
 public class MainPageController : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class MainPageController : MonoBehaviour
         selectedLocation = selectedPoint;
         // TODO: We will launch a new Scene at this point
         Debug.Log("Heritage List Click");
+        SceneManager.LoadScene("HeritageAR");
     }
 
     void LoadHeritageNearMe()

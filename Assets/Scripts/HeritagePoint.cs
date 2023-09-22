@@ -6,13 +6,13 @@ using UnityEngine;
 public class HeritagePoint
 {
     public string name;
-    public float latitude;
-    public float longitude;
+    public double latitude;
+    public double longitude;
     public string history;
     public string[] imageUrls;
     public string[] videoUrls;
 
-    public HeritagePoint(string name, float latitude, float longitude, string history, string[] imageUrls, string[] videoUrls)
+    public HeritagePoint(string name, double latitude, double longitude, string history, string[] imageUrls, string[] videoUrls)
     {
         this.name = name;
         this.latitude = latitude;
@@ -28,13 +28,13 @@ public class HeritagePoint
         set => name = value;
     }
 
-    public float Latitude
+    public double Latitude
     {
         get => latitude;
         set => latitude = value;
     }
 
-    public float Longitude
+    public double Longitude
     {
         get => longitude;
         set => longitude = value;
