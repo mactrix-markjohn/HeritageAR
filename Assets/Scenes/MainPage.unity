@@ -2694,7 +2694,9 @@ MonoBehaviour:
   - name: Computer Science
     latitude: 7.44543981552124
     longitude: 3.8929004669189453
-    history: This place is for computing
+    history: The department was established in 1974 and was conceived as a means
+      of training manpower to meet the demand for increasing computerization.   The
+      Computer Science programme is offered at the University Of Ibadan.
     imageUrls: []
     videoUrls: []
   - name: Kuti Hall

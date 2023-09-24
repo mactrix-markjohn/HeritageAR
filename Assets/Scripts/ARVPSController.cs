@@ -41,6 +41,10 @@ public class ARVPSController : MonoBehaviour
     [SerializeField] ARAnchorManager AnchorManager;
     bool initialized = false;
 
+    private bool Objectspawned = false;
+    
+    
+
 
     private HeritagePoint heritagePoint;
 
@@ -109,6 +113,22 @@ public class ARVPSController : MonoBehaviour
                 ARGeospatialAnchor anchor = AnchorManager.AddAnchor(Latitude, Longitude, Altitude, quaternion);
                 if (anchor != null)
                 {
+                    if (!Objectspawned)
+                    {
+                        //displayObject = Instantiate(ContentPrefab, anchor.transform);
+                        displayObject = Instantiate(ContentPrefab, anchor.transform.position,Quaternion.identity);
+                        if (displayObject.GetComponent<ARAnchor>() == null)
+                        {
+                            displayObject.AddComponent<ARAnchor>();
+                        }
+                        
+                        displayObject.GetComponent<HeritageMarker>().Setup(heritagePoint, this);
+
+                        
+                        Objectspawned = true;
+                    }
+
+
                     displayObject = Instantiate(ContentPrefab, anchor.transform);
                     displayObject.GetComponent<HeritageMarker>().Setup(heritagePoint, this);
                     
@@ -128,10 +148,22 @@ public class ARVPSController : MonoBehaviour
             if (result.TerrainAnchorState == TerrainAnchorState.Success &&
                 result.Anchor != null)
             {
-                displayObject  = Instantiate(ContentPrefab,result.Anchor.gameObject.transform);
-                displayObject .transform.parent = result.Anchor.gameObject.transform;
-                displayObject.GetComponent<HeritageMarker>().Setup(heritagePoint, this);
 
+                if (!Objectspawned)
+                {
+                    displayObject  = Instantiate(ContentPrefab,result.Anchor.gameObject.transform.position,Quaternion.identity);
+                    //displayObject.transform.parent = result.Anchor.gameObject.transform;
+                    if (displayObject.GetComponent<ARAnchor>() == null)
+                    {
+                        displayObject.AddComponent<ARAnchor>();
+                    }
+                    
+                    displayObject.GetComponent<HeritageMarker>().Setup(heritagePoint, this);
+
+                    Objectspawned = true;
+                }
+
+                
             }
             yield break;
         }

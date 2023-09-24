@@ -1218,8 +1218,8 @@ MonoBehaviour:
   HorizontalThreshold: 20
   Latitude: 0
   Longitude: 0
-  Altitude: 34
-  ForcePutOnTerrain: 0
+  Altitude: 5
+  ForcePutOnTerrain: 1
   Heading: 0
   ContentPrefab: {fileID: 5535955802987974398, guid: 3ac5d6fb0b5be4309ac543cc69dc8ef9, type: 3}
   AnchorManager: {fileID: 741064059}
