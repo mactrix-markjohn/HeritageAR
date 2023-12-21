@@ -4,9 +4,11 @@
     <attachedFolders />
     <explicitIncludes>
       <Path>Library/PackageCache/com.unity.collab-proxy@2.0.5</Path>
+      <Path>Library/PackageCache/com.unity.collab-proxy@2.2.0</Path>
       <Path>Library/PackageCache/com.unity.editorcoroutines@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.feature.development@1.0.1</Path>
       <Path>Library/PackageCache/com.unity.inputsystem@1.6.3</Path>
+      <Path>Library/PackageCache/com.unity.inputsystem@1.7.0</Path>
       <Path>Library/PackageCache/com.unity.mathematics@1.2.6</Path>
       <Path>Library/PackageCache/com.unity.modules.ai@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.modules.androidjni@1.0.0</Path>
@@ -42,12 +44,18 @@
       <Path>Library/PackageCache/com.unity.modules.xr@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.textmeshpro@3.0.6</Path>
       <Path>Library/PackageCache/com.unity.timeline@1.7.5</Path>
+      <Path>Library/PackageCache/com.unity.timeline@1.7.6</Path>
       <Path>Library/PackageCache/com.unity.ugui@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.visualscripting@1.8.0</Path>
+      <Path>Library/PackageCache/com.unity.visualscripting@1.9.1</Path>
       <Path>Library/PackageCache/com.unity.xr.arcore@5.0.7</Path>
+      <Path>Library/PackageCache/com.unity.xr.arcore@5.1.0</Path>
       <Path>Library/PackageCache/com.unity.xr.arfoundation@5.0.7</Path>
+      <Path>Library/PackageCache/com.unity.xr.arfoundation@5.1.0</Path>
       <Path>Library/PackageCache/com.unity.xr.arkit@5.0.7</Path>
+      <Path>Library/PackageCache/com.unity.xr.arkit@5.1.0</Path>
       <Path>Library/PackageCache/com.unity.xr.core-utils@2.2.2</Path>
+      <Path>Library/PackageCache/com.unity.xr.core-utils@2.2.3</Path>
       <Path>Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.10</Path>
       <Path>Library/PackageCache/com.unity.xr.management@4.4.0</Path>
       <Path>Packages</Path>
@@ -56,6 +64,7 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>.vs</Path>
       <Path>BuildAndroid</Path>
       <Path>Library</Path>
       <Path>Logs</Path>

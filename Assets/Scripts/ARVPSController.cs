@@ -62,37 +62,53 @@ public class ARVPSController : MonoBehaviour
 
 
     // Update is called once per frame
-        void Update()
+
+    void Update()
+    {
+
+        GeospatialFunctions();
+        //HeritageMarkerSpawner();
+
+    }
+
+
+    void GeospatialFunctions() {
+
+        //Return if initialization failed or tracking is not available
+        if (!Initializer.IsReady || EarthManager.EarthTrackingState != TrackingState.Tracking)
         {
-            //Return if initialization failed or tracking is not available
-            if (!Initializer.IsReady || EarthManager.EarthTrackingState != TrackingState.Tracking)
-            {
-                return;
-            }
-            //Tracking status to be displayed
-            string status = "";
-            //Get the tracking result
-            GeospatialPose pose = EarthManager.CameraGeospatialPose;
-            //The case where the tracking accuracy is worse than the threshold (the value is large)
-            if (pose.OrientationYawAccuracy > HeadingThreshold ||
-                  pose.HorizontalAccuracy > HorizontalThreshold)
-            {
-                status = "Low Tracking Accuracy： Please look arround.";
-            }
-            else
-            {
-                status = "High Tracking Accuracy";
-                if (!initialized)
-                {
-                    initialized = true;
-                    //Create and place a virtual object.
-                    SpawnObject(pose, ContentPrefab);
-                }
-            }
-            
-            //Display the tracking result
-            ShowTrackingInfo(status, pose);
+            return;
         }
+        //Tracking status to be displayed
+        string status = "";
+        //Get the tracking result
+        GeospatialPose pose = EarthManager.CameraGeospatialPose;
+        //The case where the tracking accuracy is worse than the threshold (the value is large)
+        if (pose.OrientationYawAccuracy > HeadingThreshold ||
+              pose.HorizontalAccuracy > HorizontalThreshold)
+        {
+            status = "Low Tracking Accuracy： Please look arround.";
+        }
+        else
+        {
+            status = "High Tracking Accuracy";
+            if (!initialized)
+            {
+                initialized = true;
+                //Create and place a virtual object.
+                SpawnObject(pose, ContentPrefab);
+            }
+        }
+
+        //Display the tracking result
+        ShowTrackingInfo(status, pose);
+
+
+    }
+    
+    
+    
+
 
         //Instantiate the object to be displayed
         void SpawnObject(GeospatialPose pose, GameObject prefab)
@@ -135,6 +151,7 @@ public class ARVPSController : MonoBehaviour
                 }
             }
         }
+
         private IEnumerator CheckTerrainPromise(ResolveAnchorOnTerrainPromise promise)
         {
             var retry = 0;
@@ -167,6 +184,7 @@ public class ARVPSController : MonoBehaviour
             }
             yield break;
         }
+
         void ShowTrackingInfo(string status, GeospatialPose pose)
         {
             if (OutputText == null) return;
@@ -194,5 +212,18 @@ public class ARVPSController : MonoBehaviour
         public void BackButton()
         {
             SceneManager.LoadScene("MainPage");
+        }
+
+
+        void HeritageMarkerSpawner()
+        {
+            if (!Objectspawned)
+            {
+                displayObject  = Instantiate(ContentPrefab,Vector3.zero,Quaternion.identity);
+
+                displayObject.GetComponent<HeritageMarker>().Setup(heritagePoint, this);
+
+                Objectspawned = true;
+            }
         }
 }

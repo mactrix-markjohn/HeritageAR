@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,8 @@ public class MainPageController : MonoBehaviour
     
     public GameObject scrollerContent;
     public GameObject heritageListItem;
+
+    
     
 
     
@@ -54,7 +57,7 @@ public class MainPageController : MonoBehaviour
         selectedLocation = selectedPoint;
         // TODO: We will launch a new Scene at this point
         Debug.Log("Heritage List Click");
-        SceneManager.LoadScene("HeritageAR");
+        SceneManager.LoadScene("PreviewPage");
     }
 
     void LoadHeritageNearMe()
@@ -125,5 +128,11 @@ public class MainPageController : MonoBehaviour
                 "Location service ended with {0} status.", Input.location.status);
             Input.location.Stop();
         }
+    }
+
+
+    public void HelpDocClick() {
+
+        SceneManager.LoadScene("HelpDocumentation");
     }
 }

@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HeritageAR.unity
     guid: f8574750e4907443793304f5628221a1
+  - enabled: 1
+    path: Assets/Scenes/PreviewPage.unity
+    guid: 16f5def054f6b48e394e2b7a468e6c15
+  - enabled: 1
+    path: Assets/Scenes/HelpDocumentation.unity
+    guid: 2673339176f434da0a85bdfed06cd730
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a8307bc4d15c342248e9d0dabfb78d1a, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: e648e8fd6d19443feab0ff7aad57893f, type: 2}

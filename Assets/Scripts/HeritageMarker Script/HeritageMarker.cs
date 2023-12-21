@@ -40,7 +40,10 @@ public class HeritageMarker : MonoBehaviour
     {
 
         PointName.text = heritagePoint.name;
-        PointHistory.text = heritagePoint.history;
+        
+        
+        string history = heritagePoint.history.Replace("\\n", "\n");
+        PointHistory.text = history;
 
         if (heritagePoint.name.ToLower().Contains("museum"))
         {
