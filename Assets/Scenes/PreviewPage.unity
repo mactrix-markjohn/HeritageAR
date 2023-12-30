@@ -2616,8 +2616,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HelpDocumentation, Assembly-CSharp
+      - m_Target: {fileID: 894780565}
+        m_TargetAssemblyTypeName: PreviewPage, Assembly-CSharp
         m_MethodName: BackHomeButton
         m_Mode: 1
         m_Arguments:
@@ -3670,7 +3670,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
